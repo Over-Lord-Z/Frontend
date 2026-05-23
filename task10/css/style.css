@@ -1,0 +1,388 @@
+:root{
+    --font-popins:"Poppins", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6F6F6;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 10px;
+    height: 90%;
+    width: 85%;
+    font-family: var(--font-popins);
+    background-color: #F6F6F6;
+}
+
+
+
+.nav{
+    grid-row: span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.nav a{
+    color: black;
+    text-decoration: none;
+     transform: rotate(-90deg);
+     font-weight: 600;
+}
+
+.profile{
+    grid-row: span 3;
+    font-family: var(--font-popins);
+    font-size: 1rem;
+    font-weight: 200;
+    color: white;
+    background-color: #8184D2;
+    position: relative;
+    border-radius: 2rem;
+}
+
+.profile .atom{
+    height: 50px;
+    width: 200px;
+    border: 1px solid red;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6F6F6;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 400;
+    /* border-radius: 0 0 0 1rem; */
+    
+}
+
+
+
+.profile img{
+    height: 72%;
+    width: 72%;
+    z-index: 2;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 0px;
+}
+
+.profile .content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 300px;
+    gap: 30px;
+    padding-left: 30px;
+}
+
+.content p{
+    font-size: 2.9rem;
+    font-weight: 200;
+}
+.content h2{
+    font-size: 3.5rem;
+    line-height: 50px;
+    font-weight: 400;
+}
+
+.content span{
+    margin-top: 20px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-bottom: 5px;
+    border-bottom: 2px dotted #F6F6F6
+}
+.content span > i{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.center-circle{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 120px;
+    right: 50px;
+    z-index: 1;
+}
+
+.circle1{
+    height: 250px;
+    width: 250px;
+    background-color: #EFAEFF;
+    border-radius: 50%;
+}
+.circle2{
+    height: 280px;
+    width: 280px;
+    border: 6px solid #F6F6F6;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.disc{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disc img{
+    height: 90%;
+    width: 90%;
+}
+
+.portfolio{
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.7rem;
+    font-family:var(--font-popins);
+    font-weight: 800;
+    position: relative;
+}
+
+ .l-box-corner{
+    height: 30px;
+    width: 30px;
+    border-top: 10px solid black;
+    border-right: 10px solid black;
+
+    position: absolute;
+    top: 60px;
+    right:0;
+
+}
+
+ .l-box-corner2{
+    height: 10px;
+    width: 10px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute;
+    top: 20px;
+    right:20px;
+
+
+}
+
+
+.video{
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+.video img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+}
+.video > span{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    background-color: #f6f6f6a3;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.achievments{
+    border-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+ .achievments span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.achievments span .l-box-corner2{
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+}
+.achievments span p {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.achievments span:nth-child(1){
+    background-color: #A9D9D7;
+    color: black;
+    height: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 1rem 1rem 0 0;
+
+
+}
+.achievments span:nth-child(1) h3{
+    font-size: 2.5rem;
+}
+
+.achievments span:nth-child(2){
+    background-color: #8E6FBE;
+    color: #F6F6F6;
+    height: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 1rem 1rem;
+
+
+}
+.achievments span:nth-child(2) h3{
+    font-size: 2.5rem;
+}
+
+.apple{
+    background-color: #585858;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    color: #F6F6F6;
+    
+}
+
+.apple i{
+    font-size: 2rem;
+}
+
+.apple .l-box-corner2{
+    border-top: 2px solid #F6F6F6;
+    border-right: 2px solid #F6F6F6;
+}
+.siri{
+    grid-column: span 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.siri > div:nth-child(1){
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 1rem 0 0 1rem;
+    
+}
+
+.siri > div:nth-child(2){
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEC267;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.siri  .l-box-corner2{
+    border-top: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+.siri img{
+    height: 80%;
+    width: 80%;
+}
+
+
+
+.about{
+    position: absolute;
+    width: 220px;
+    border-radius: 12px 0 0 12px;
+    
+}
+
+.about svg{
+    width: 100%;
+    display: block;
+}
+
+.about span{
+    position: absolute;
+    left: 25px;
+    top: 28px;
+    font-weight: 400;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.curve1 , .curve2{
+    position: absolute;
+    height: 31px;
+    width: 31px;
+}
+
+.curve1{
+    background-color: #8184D2;
+    top: 64px;
+    left: 0;
+    border-radius: 1rem 0 0 0.5rem;
+    position:relative;
+    z-index: 1;
+
+}
+.curve2{
+    background-color: #F6F6F6;
+    top: 60px;
+    left: -5px;
+    border-radius: 50%;
+}
