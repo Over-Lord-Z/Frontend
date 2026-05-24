@@ -1,0 +1,329 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Bungee&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Electrolize&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Bungee&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Electrolize&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Bungee&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Electrolize&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Bonheur+Royale&family=Bungee&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Electrolize&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+
+:root{
+    --font1-syne: "Syne", sans-serif;
+    --font2-inter: "Inter", sans-serif;
+    --font3-playfair: "Playfair Display", serif;
+    --font4-bonheur: "Bonheur Royale", cursive;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+main{
+    height: 100vh;
+    max-width: 90%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    
+
+}
+
+.nav a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.side{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.2rem;
+}
+
+.side .cart{
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.seperator{
+    height: 2px;
+    width: 80%;
+    background-color:  rgba(128, 128, 128, 0.369);
+    margin-top: 20px;
+}
+.section1{
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--font1-syne);
+    width: 90%;
+    margin-top: 0;
+    padding-top: 50px;
+    margin-bottom: 70px;
+}
+
+.flower{
+    font-size: 3rem;
+}
+
+.section2{
+    min-height: 420px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr 1fr 1.2fr;
+    grid-template-rows: repeat(4,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section2 div{
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+}
+
+
+.section2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;    
+    object-position: top;
+    border-radius: 1rem;
+}
+
+.section2 div{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-size: cover;
+    border-radius: 1rem;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+}
+
+
+.c1{ 
+    grid-column: 1;
+    grid-row: 1 / 3;
+    font-family: var(--font1-syne);
+ }  
+.c1 p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.c1 h3{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.c2{ grid-column: 2; grid-row: 1; }       
+.c3{ 
+    grid-column: 3; 
+    grid-row: 1 / 5;
+    /* background-image: url("/task11/resources/4.jpg");  */
+    border-radius: 25px;
+     }   
+.c4{ grid-column: 4; grid-row: 1; }        
+.c5{ grid-column: 5; grid-row: 1; display: flex; align-items: center; justify-content:  flex-end;
+    }       
+.c6{ 
+    grid-column: 2;
+    grid-row: 2 / 3; 
+     /* background-image: url("/task11/resources/2.jpg"); */
+}   
+.c7{ 
+    grid-column: 2; 
+    grid-row: 3/5;
+    /* background-image: url("/task11/resources/3.webp"); */
+
+   }        
+.c8{ grid-column: 4; grid-row: 2 / 4;
+/* background-image: url("/task11/resources/5.jpg"); */
+ }   
+.c9{ grid-column: 5; grid-row: 2 / 4; 
+    /* background-image: url("/task11/resources/7.jpg"); */
+}   
+.c10{ 
+    grid-column: 1; 
+    grid-row: 2/ 4; 
+    /* background-image: url("/task11/resources/img1.webp"); */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+} 
+.c11{ 
+    grid-column: 1; 
+    grid-row: 4/5; 
+    font-family: var(--font2-inter);
+}       
+.c11 span{
+    font-size: 2.3rem;
+}
+
+.c11 p{
+    font-size: 0.6rem;
+    font-weight: 200;
+    line-height: 20px;
+}
+
+.c12{ grid-column: 4; grid-row: 4;
+     /* background-image: url("/task11/resources/6.jpg"); */
+    }       
+.c13{ grid-column: 5; grid-row: 4; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }  
+.c13 p{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.c13 span{
+    font-size: 2rem;
+}
+
+
+
+.c3 img{
+    object-position: center !important; 
+}
+
+.c10 img,
+.c8 img,
+.c9 img,
+.c6 img,
+.c7 img,
+.c12 img{
+    height: 100% !important; 
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+
+
+.section2 img{
+    transition: 0.3s ease;
+}
+
+.section2 img:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 140px;
+     padding: 0 20px;
+     width: 100%;
+}
+
+footer h3{
+    font-family: var(--font4-bonheur);
+    font-size: 2.5rem;
+    text-decoration: underline #FBD74E;
+}
+
+footer button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background: white;
+    cursor: pointer;
+    font-family: var(--font2-inter);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    font-weight: 400;
+}
+
+footer > div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+footer h2{
+    font-size: 3rem;
+    font-weight: 200;
+    font-family: var(--font1-syne);
+    transform: scaleY(1.5);
+}
+
+footer .foot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: var(--font2-inter);
+}
+
+.foot .inner-foot{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.inner-foot > p:nth-child(1){
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+
+.inner-foot > p:nth-child(2){
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.foot span{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
