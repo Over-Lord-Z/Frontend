@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+
+main{
+    height: 80%;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: rgb(65, 150, 65);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.forum{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    height: 90%;
+    width: 60%;
+    background-color: rgb(99, 220, 99);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+input , textarea{
+    width: 80%;
+    outline: none;
+    border-radius: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+form > button{
+    height: 50px;
+    width: fit-content;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#choose_file{
+    display: none;
+}
+
+label{
+    height: 20px;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.15) ;
+}
+
+label , form>button{
+    background-color: rgba(7, 139, 15, 0.945);
+}
+label:hover , form>button:hover{
+    background-color: rgb(41, 187, 97);
+}
+
+
+.to-do-notes{
+    height: 50%;
+    /* background-color: brown; */
+    display: flex;
+    position: relative;
+    flex-wrap: wrap; 
+    border-radius: 8px;
+}
+
+.box{
+    height: 60px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(121, 197, 80);
+      transition: all 0.3s ease; 
+    
+}
+
+.img-box{
+    height: 48px;
+    width: 50px;
+    border: 1px solid green;
+    border-radius: 50%;
+}
+
+
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-left: 5px;
+}
+
+h3{
+    width: 80px;
+    overflow: hidden;
+    align-items: center;
+    white-space: nowrap;
+        text-overflow: ellipsis;
+
+    
+}
+
+
+p{
+    width: 100px;
+    overflow: hidden;
+    color: rgb(59, 53, 53);
+    word-wrap: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+    width: 50px;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.btn button{
+    padding: 8px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* .box:hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80%;
+} */
+
+/* 
+.box{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.img-box{
+    margin-top: 0;
+    height: 50%;
+    width: 100%;
+    border-radius: 0;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    margin: 0;
+}
+
+h3{
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+p{
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: rgb(59, 53, 53);
+    font-size: 1.1rem;
+} */
+
+
+
+.box.expanded {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    position: relative;
+}
+
+.box.expanded .img-box {
+    margin-top: 0;
+    height: 50%;
+    width: 100%;
+    border-radius: 0;
+}
+
+.box.expanded img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    margin: 0;
+}
+
+.box.expanded h3 {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    font-size: 1.1rem;
+    overflow: visible;
+    padding: 0 10px;
+    background-color: aqua;
+    padding: 5px
+}
+
+.box.expanded p {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    color: rgb(59, 53, 53);
+    font-size: 1rem;
+    /* overflow-y: auto; */
+        padding: 0 10px;
+        line-height: 1.5;
+position: relative;
+}
+
+.box.expanded .btn{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
