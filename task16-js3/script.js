@@ -32,7 +32,7 @@ form.addEventListener('submit', (e)=>{
         category: category.value,
         status : "pending"
     }
-console.log(obj)
+
     taskArray.push(obj);
     localStorage.setItem("data",JSON.stringify(taskArray));
     loadUI();
@@ -86,7 +86,6 @@ let loadUI = (list = taskArray) => {
 
 container.addEventListener('click', (e) => {
     let box = e.target.closest('.box');
-    console.log(box)
     if (!box) return;
 
     let id = box.dataset.id;
@@ -155,7 +154,7 @@ let updateIndex = null;
 let editBox = (id) => {
     overlay.style.display = "flex";
     updateId = id;
-    console.log(updateId)
+    
     let task = taskArray.find(t => t.id === id);
     
     oTitle.value = task.title;
@@ -302,7 +301,6 @@ filterCateogory.addEventListener('change', (e)=>{
 
 filterStatus.addEventListener('change', (e)=>{
     let value = e.target.value.toLowerCase();
-    console.log(value   )
     let filteredS = value!=""?taskArray.filter(t => t.status.toLowerCase() == value):taskArray;
     loadUI(filteredS)
 })
@@ -403,3 +401,5 @@ function startFlow(flag){
         listener.push({item, fn, capture: flag});
     })
 }
+
+
