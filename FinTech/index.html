@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Login Form  -->
+        <form class="formLogin">
+            <h1>Welcome Back</h1>
+            <p>Login to FinTrack Pro</p>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="" id="password" required>
+            </div>
+            <button class="btn login" type="submit">Login</button>
+            <p class="info">Don't have an account? <span style="color: blue;" class="reg">Register here</span></p>
+        </form>
+    
+
+    <!-- Register Form  -->
+        <form class="formRegister hide">
+            <h1>Create Account</h1>
+            <p>Join FinTrack Pro</p>
+            <div>
+                <label for="usernameR">Choose a Username</label>
+                <input type="text" id="usernameR" required>
+            </div>
+            <div>
+                <label for="passwordR">Password</label>
+                <input type="password" name="" id="passwordR" minlength="5" required>
+            </div>
+            <button class="btn register " type="submit">Register</button>
+            <p class="info">Already have an account? <span style="color: blue;" class="log">Login here</span></p>
+        </form>
+
+    <!-- logged in dashboard -->
+     <div class="parent hide">
+
+        <div class="container ">
+
+
+             <aside>
+                <div class="logo">
+                    <span class="logoImg"><i class="ri-stack-fill"></i></span>
+                    <span>
+                        <h2>FinTrack Pro</h2>
+                        <p>Enterprise Finance</p>
+                    </span>
+                </div>
+                <div class="side active dashboard"><span><i class="ri-microsoft-line pad"></i></span><h3>Dashboard</h3></div>
+                <div class="side settings"><span><i class="ri-settings-3-fill pad"></i></span><h3>Settings</h3></div>
+                <div class="transactionbtm"><span><i class="ri-add-line"></i></span> Add Transaction</div>
+             </aside>
+
+
+             <main>
+
+                <div class="nav">
+                    <!-- <div>
+                        <span class="line"></span>
+                        <h3>Dev</h3>
+                        <div class="logout"><span><i class="ri-logout-box-r-line"></i></span>Logout</div>
+                    </div> -->
+                </div>
+
+                <div class="dashboard-main hide">
+                <div class="details">
+                    <div style="margin-bottom: 30px ; padding-left:40px">
+                        <h1 class="font-bold text-2xl">Financial Overview</h1>
+                        <p class="text-[0.8rem] font-medium text-gray-400">Real-time tracking application</p>
+                    </div>
+
+                    <div class="w-[100%] h-[200px]  rounded flex gap-5 item-center justify-center cardMain">
+                        <!-- <div class="card">
+                            <span>
+                                <i class="ri-money-dollar-circle-fill"></i>
+                            </span>
+                            <div>
+                            <p>Current Balance</p>
+                            <h1>$0.00</h1>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <span>
+                                
+                                <i class="ri-funds-box-fill"></i>
+                            </span>
+                            <div>
+                            <p>Total Income</p>
+                            <h1>$0.00</h1>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <span>
+                                <i class="ri-wallet-fill"></i>
+                            </span>
+                            <div>
+                            <p>Total Expense</p>
+                            <h1>$0.00</h1>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <span>
+                                <i class="ri-exchange-dollar-line"></i>
+                            </span>
+                            <div>
+                            <p>Total Transaction</p>
+                            <h1>0</h1>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="flex items-ceter  gap-5" style="margin-top: 20px;">
+                        <div class="h-90 bg-white w-150 rounded" style="margin-top: 10px; margin-left: 7%;">
+                            <h1 class="text-2xl font-bold" style="padding: 20px;">Cash Flow Analysis</h1>
+                            <canvas class="chart" id="chart"></canva>
+                        </div>
+                        <div class="h-50 w-57 bg-white rounded flex flex-col relative gap-5" style="margin-top: 10px; padding: 20px;">
+                            <h1 class="font-bold text-2xl">Preferences</h1>
+                            <p class="font-medium flex gap-5">Dark Mode 
+                                <label class="switch">
+                                  <input type="checkbox" id="toggle">
+                                  <span class="slider"></span>
+                                </label>
+                            </p>
+                            <span class="line2"></span>
+                            <div class="reset bg-red-400 flex item-center justify-center cursor-pointer gap-2" style="padding: 5px;">
+                                <span><i class="ri-delete-bin-7-fill"></i></span> Reset All Data
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded w-150 flex flex-col gap-5" style="margin: 20px 0 0 70px; padding: 20px;">
+                        <h1 class="font-bold text-2xl">All Transactions</h1>
+                        <div class="flex gap-5">
+                            <div class="filter">
+                                <span><i class="ri-search-line"></i></span><input type="text" placeholder="Search transactions">
+                            </div>
+                            <select name="all-types" id="">
+                                <option value="" selected disabled>All Types</option>
+                                <option value="Income Only">Income Only</option>
+                                <option value="Expense Only">Expense Only</option>
+                            </select>
+                    </div>
+                    <div>
+                        <table>
+                            <thead>                                
+                                <tr>
+                                     <th>Date</th>
+                                     <th>Description</th>
+                                     <th>Category</th>
+                                     <th>Amount</th>
+                                     <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td>07/07/2026</td>
+                                    <td>walk</td>
+                                    <td>invest</td>
+                                    <td>2000</td>
+                                    <td>delete</td>
+                                </tr> -->
+                            </tbody>
+
+                        </table>
+                    </div>
+                      
+                        
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="settings-main">
+                    <div class="children">
+                        <h1 class="text-3xl font-bold">Settings</h1>
+                        <p class="text-sm font-medium text-gray-400">Manage your account profile and app formatting.</p>
+                        <div class="namechange">
+                            <!-- <h1 class="text-2xl font-bold">Profile Details</h1>
+                            <form class="change">
+                                <div>
+                                    <div>
+                                        <label for="username">Full Name</label>
+                                        <input type="text" id="username" placeholder="User">
+                                    </div>
+                                    <div>
+                                        <label for="currency">Primary Currency</label>
+                                        <select name="" id="currency">
+                                            <option value="$" selected>USD ($)</option>
+                                            <option value="€">EUR (€)</option>
+                                            <option value="£">GBP (£)</option>
+                                            <option value="₹">INR (₹)</option>
+                                            <option value="¥">JPY (¥)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="submit">Save Changes</button>
+
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+
+
+             </main>
+
+
+        </div>
+
+
+</div>
+
+<div class="overlay">
+    <form class="ovl" action="">
+        <h1 class="text-2xl font-medium">Add Transaction</h1>
+        <div>
+            <label for="expense">Type</label>
+            <select name="expense" id="expense" required="">
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+            </select>
+        </div>
+        <div>
+            <label for="desc">Description</label>
+            <input name="desc" type="text" placeholder="e.g. Amazon , Salary, Cofee" id="desc" required>
+        </div>
+        <div class="box">
+            <div>
+                <label for="amt">Amount</label>
+                <input name="amt" type="text" placeholder="" id="amt" required>
+            </div>
+            <div class="w-[50%]">
+                <label for="date">Date</label>
+                <input name="date" type="date" placeholder="07-07-2026" id="date"  required >
+            </div>
+        </div>
+        <label for="catg">Category</label>
+        <select name="txCategory" id="txCategory" required="">
+            <option value="" disabled="" selected="">Select a category</option>
+            <option value="Food &amp; Dining">Food &amp; Dining</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Recharge &amp; Bills">Recharge &amp; Bills</option>
+            <option value="Petrol &amp; Auto">Petrol &amp; Auto</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Salary">Salary</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Save Transaction</button>
+    </form>
+</div>
+
+    <!-- my popup to display errors -->
+    <span class="popup"></span>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
