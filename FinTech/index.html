@@ -122,11 +122,11 @@
                         </div> -->
                     </div>
                     <div class="flex items-ceter  gap-5" style="margin-top: 20px;">
-                        <div class="h-90 bg-white w-150 rounded" style="margin-top: 10px; margin-left: 7%;">
+                        <div class="h-90 cashflow-box w-150 rounded" style="margin-top: 10px; margin-left: 7%;">
                             <h1 class="text-2xl font-bold" style="padding: 20px;">Cash Flow Analysis</h1>
                             <canvas class="chart" id="chart"></canva>
                         </div>
-                        <div class="h-50 w-57 bg-white rounded flex flex-col relative gap-5" style="margin-top: 10px; padding: 20px;">
+                        <div class="h-50 w-57 preferences-box rounded flex flex-col relative gap-5" style="margin-top: 10px; padding: 20px;">
                             <h1 class="font-bold text-2xl">Preferences</h1>
                             <p class="font-medium flex gap-5">Dark Mode 
                                 <label class="switch">
@@ -140,16 +140,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded w-150 flex flex-col gap-5" style="margin: 20px 0 0 70px; padding: 20px;">
+                    <div class="transactions-box rounded w-150 flex flex-col gap-5" style="margin: 20px 0 0 70px; padding: 20px;">
                         <h1 class="font-bold text-2xl">All Transactions</h1>
                         <div class="flex gap-5">
                             <div class="filter">
-                                <span><i class="ri-search-line"></i></span><input type="text" placeholder="Search transactions">
+                                <span><i class="ri-search-line"></i></span><input  class="search-transaction" type="text" placeholder="Search transactions">
                             </div>
-                            <select name="all-types" id="">
-                                <option value="" selected disabled>All Types</option>
-                                <option value="Income Only">Income Only</option>
-                                <option value="Expense Only">Expense Only</option>
+                            <select name="all-types" id="dropdown">
+                                <option value="all" selected >All Types</option>
+                                <option value="income">Income Only</option>
+                                <option value="expense">Expense Only</option>
                             </select>
                     </div>
                     <div>

@@ -6,6 +6,13 @@ let popup = document.querySelector('.popup');
 let currentUser = "";
 let expenseChart;
 
+//dark light
+let switchOnOff = document.querySelector('#toggle');
+
+switchOnOff.addEventListener('change', ()=>{
+    document.body.classList.toggle('dark');
+});
+
 //Handaling Login page
 let formLogin = document.querySelector('.formLogin');
 let username = document.querySelector('#username');
@@ -132,6 +139,44 @@ let currencyChange = '$';
         showPopup("Logged out succesfully.", "flex")
     }
 
+
+
+
+
+let tableBody = document.querySelector('tbody');
+
+function renderTransactions(transactions) {
+ tableBody.innerHTML="";
+transactions.forEach((elem, idx)=>{
+   
+    tableBody.innerHTML+=` 
+                      <tr>
+                          <td>${elem.date}</td>
+                          <td>${elem.desc}</td>
+                          <td>${elem.txCategory}</td>
+                          <td>${elem.amt}</td>
+                          <td><button onclick="deleteTransaction(${elem.id})" style="background-color:red ; color:white ; border-radius:8px ; padding:5px; cursor:pointer ">delete</button></td>
+                      </tr>
+                    `
+})
+
+if (transactions.length === 0) {
+
+tableBody.innerHTML = `<tr>
+                            <td colspan="5">No transactions found</td>
+                        </tr>`;
+}
+}
+
+
+
+
+
+
+
+
+
+
 let loadDashboard = (loginUser) => {
     dashboard.style.display = 'flex'
     formLogin.style.display= 'none'
@@ -154,6 +199,8 @@ let loadDashboard = (loginUser) => {
    const userTransactions = transactionArray.filter(
     t => t.owner === loginUser
 );
+
+renderTransactions(userTransactions);
     
 
     // transactionArray.forEach((elem)=>{
@@ -250,25 +297,13 @@ if (expenseChart) {
 
 
 
-let tableBody = document.querySelector('tbody');
-
- tableBody.innerHTML="";
-userTransactions.forEach((elem, idx)=>{
-   
-    tableBody.innerHTML+=` 
-                      <tr>
-                          <td>${elem.date}</td>
-                          <td>${elem.desc}</td>
-                          <td>${elem.txCategory}</td>
-                          <td>${elem.amt}</td>
-                          <td><button onclick="deleteTransaction(${elem.id})" style="background-color:red ; color:white ; border-radius:8px ; padding:5px; cursor:pointer ">delete</button></td>
-                      </tr>
-                    `
-})
 
 
 
 } //we can call a function onclick="" and it will work only of the fucntion is declared in global scope
+
+
+
 
 
 
@@ -465,3 +500,49 @@ changeForm.addEventListener('submit', (e) => {
 });
 
 
+
+
+//fiter
+let search = document.querySelector('.search-transaction')
+let dropdown = document.querySelector("#dropdown")
+
+
+search.addEventListener('input', () => {
+    const keyword = search.value.toLowerCase();
+
+    const filteredTransactions = transactionArray.filter(tx =>
+        tx.owner === currentUser &&
+        (
+            tx.desc.toLowerCase().includes(keyword) ||
+            tx.txCategory.toLowerCase().includes(keyword)
+        )
+    );
+
+    renderTransactions(filteredTransactions);
+});
+
+
+function applyFilters() {
+    const keyword = search.value.toLowerCase();
+    const type = dropdown.value;
+
+    let filtered = transactionArray.filter(
+        tx => tx.owner === currentUser
+    );
+
+    if (type !== "all") {
+        filtered = filtered.filter(
+            tx => tx.expense === type
+        );
+    }
+
+    filtered = filtered.filter(tx =>
+        tx.desc.toLowerCase().includes(keyword) ||
+        tx.txCategory.toLowerCase().includes(keyword)
+    );
+
+    renderTransactions(filtered);
+}
+
+search.addEventListener("input", applyFilters);
+dropdown.addEventListener("change", applyFilters);
